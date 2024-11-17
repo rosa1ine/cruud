@@ -1,0 +1,11 @@
+{% extends 'crudapp/base.html' %}
+{% block content %}
+<h1>User Details</h1>
+<p>Name: {{ user.name }}</p>
+<p>Surname: {{ user.surname }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Phone: {{ user.phone }}</p>
+<p>Salary: {{ user.salary }}</p>
+<p>Country: {{ user.cname }}</p>
+<a href="{% url 'user_list' %}">Back to List</a>
+{% endblock content %}

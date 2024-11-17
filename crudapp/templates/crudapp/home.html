@@ -1,0 +1,16 @@
+{% extends 'crudapp/base.html' %}
+
+{% block content %}
+<h1>Database Tables</h1>
+<ul>
+  {% for table in tables %}
+    <li>
+      {% if table == "users" %}
+        <a href="{% url 'user_list' %}">Users Table</a>
+      {% else %}
+        {{ table }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

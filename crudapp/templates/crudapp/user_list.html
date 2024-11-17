@@ -1,0 +1,15 @@
+{% extends 'crudapp/base.html' %}
+{% block content %}
+<h1>Users</h1>
+<a href="{% url 'user_create' %}">Add New user</a>
+<ul>
+    {% for user in users %}
+        <li>
+            {{user.name }} {{user.surname }} - <a href="{% url 'user_detail' user.email %}">View</a> - 
+            
+            <a href="{% url 'user_update' user.email%}">Edit</a> - 
+            <a href="{% url 'user_delete' user.email %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
